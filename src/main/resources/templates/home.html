@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>My Web App</title>
+</head>
+<body>
+<h1 th:text="${message}">Placeholder message</h1>
+
+<form action="/" method="get">
+	<input name="name" placeholder="Enter your name" type="text">
+	<button type="submit">Say Hello</button>
+</form>
+</body>
+</html>
