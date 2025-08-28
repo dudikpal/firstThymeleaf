@@ -1,6 +1,6 @@
 FROM adoptopenjdk as builder
 WORKDIR application
-COPY target/quizgame-0.0.1-SNAPSHOT.jar app.jar
+COPY target/firstThymeleaf-0.0.1-SNAPSHOT.jar app.jar
 RUN java -Djarmode=layertools -jar app.jar extract
 FROM adoptopenjdk
 WORKDIR application
