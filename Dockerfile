@@ -1,8 +1,9 @@
-FROM adoptopenjdk as builder
+FROM eclipse-temurin:17-jdk-jammy as builder
 WORKDIR application
 COPY target/firstThymeleaf-0.0.1-SNAPSHOT.jar app.jar
 RUN java -Djarmode=layertools -jar app.jar extract
-FROM adoptopenjdk
+
+FROM eclipse-temurin:17-jdk-jammy
 WORKDIR application
 COPY --from=builder application/dependencies/ ./
 COPY --from=builder application/spring-boot-loader/ ./
